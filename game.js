@@ -21,31 +21,31 @@ function playRound(playerSelection, computerSelection) {
 
   if (playerSelection === "rock" && computerSelection === "scissors") {
     playerScore++;
-    return 'Player has won! Rock beats scissors'
+    alert( 'Player has won! Rock beats scissors')
   }
-  if (computerSelection === "rock" && playerSelection === "scissors") {
+  else if (computerSelection === "rock" && playerSelection === "scissors") {
     computerScore++;
-    return 'Computer has won! Rock beats scissors'
+    alert( 'Computer has won! Rock beats scissors')
   }
-  if (playerSelection === "rock" && computerSelection === "paper") {
+  else if (playerSelection === "rock" && computerSelection === "paper") {
     computerScore++;
-    return 'Computer has won! Paper beats Rock'
+    alert( 'Computer has won! Paper beats Rock')
   }
-  if (computerSelection === "rock" && playerSelection === "paper") {
+  else if (computerSelection === "rock" && playerSelection === "paper") {
     playerScore++;
-    return 'Player has won! Paper beats Rock'
+    alert( 'Player has won! Paper beats Rock')
   }
-  if (playerSelection === "scissors" && computerSelection === "paper") {
+  else if (playerSelection === "scissors" && computerSelection === "paper") {
     playerScore++;
-    return 'Player has won! Scissors beats Paper'
+    alert('Player has won! Scissors beats Paper')
   }
-  if (computerSelection === "scissors" && playerSelection === "paper") {
+  else if (computerSelection === "scissors" && playerSelection === "paper") {
     computerScore++;
-    return 'Computer has won! Scissors beats Paper'
+    alert( 'Computer has won! Scissors beats Paper')
   }
   else {
     draw++;
-    return `Both players chose ${playerSelection}. It was a Draw!`
+    alert( `Both players chose ${playerSelection}. It was a Draw!`)
   }
 
 }
@@ -56,17 +56,17 @@ function game() {
     let playerSelection = prompt("Please Enter (Rock,Paper,Scissors): ")
     playerSelection = playerSelection.toLowerCase();
     let computerSelection = getComputerChoice();
-    console.log(playRound(playerSelection, computerSelection));
+    playRound(playerSelection, computerSelection);
 
   }
   if (playerScore > computerScore) {
-    return `After 5 Rounds: Player has Won with a score of ${playerScore} to Computers Score of ${computerScore}. With a Draw score of ${draw}!`
+    alert(`After 5 Rounds: Player has Won with a score of ${playerScore} to Computers Score of ${computerScore}. With a Draw score of ${draw}!`)
   }
   else if (playerScore < computerScore) {
-    return `After 5 Rounds: Computer has Won with a Player score of ${computerScore} to Computers Score of ${playerScore}. With a Draw score of ${draw}!`
+    alert(`After 5 Rounds: Computer has Won with a Player score of ${computerScore} to Computers Score of ${playerScore}. With a Draw score of ${draw}!`)
   }
   else {
-    return `After 5 Rounds: It is a Tie with Player score of ${playerScore} to Computers Score of ${computerScore}. With a Draw score of ${draw}`
+    alert(`After 5 Rounds: It is a Tie with Player score of ${playerScore} to Computers Score of ${computerScore}. With a Draw score of ${draw}`)
   }
 
 
