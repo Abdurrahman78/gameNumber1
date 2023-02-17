@@ -1,7 +1,7 @@
 //will randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’.
 function getComputerChoice(){
   let choices=["rock", "paper", "scissors"];
-  let randomChoice=Math.floor(Math.random()*choices.length)+1
+  let randomChoice=Math.floor(Math.random()*choices.length);
   return choices[randomChoice];
   
   }
@@ -18,8 +18,32 @@ function getComputerChoice(){
   if(caseSensitive==="rock" && computerSelection==="scissors"){
     return 'Player has won! Rock beats scissors'
   }
+  if(computerSelection==="rock" && caseSensitive==="scissors"){
+    return 'Computer has won! Rock beats scissors'
+  }
+  if(caseSensitive==="rock" && computerSelection==="paper"){
+    return 'Computer has won! Paper beats Rock'
+  }
+  if(computerSelection==="rock" && caseSensitive==="paper"){
+    return 'Player has won! Paper beats Rock'
+  }
+  if(caseSensitive==="scissors" && computerSelection==="paper"){
+    return 'Player has won! Scissors beats Paper'
+  }
+  if(computerSelection==="scissors" && caseSensitive==="paper"){
+    return 'Computer has won! Scissors beats Paper'
+  }
+  else{
+    return `Both players chose ${playerSelection}. It was a Draw!`
+  }
 
   }
 
-console.log(playRound("ROCK", getComputerChoice()))
+
+
+
+
+  const playerSelection = "rock";
+  const computerSelection = getComputerChoice();
+  console.log(playRound(playerSelection, computerSelection));
   
