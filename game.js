@@ -60,13 +60,13 @@ function game() {
 
   }
   if (playerScore > computerScore) {
-    return `After 5 Rounds Player has Won with a score of ${playerScore} to Computers Score of ${computerScore}!`
+    return `After 5 Rounds: Player has Won with a score of ${playerScore} to Computers Score of ${computerScore}. With a Draw score of ${draw}!`
   }
   else if (playerScore < computerScore) {
-    return `After 5 Rounds Computer has Won with a score of ${computerScore} to Computers Score of ${playerScore}!`
+    return `After 5 Rounds: Computer has Won with a Player score of ${computerScore} to Computers Score of ${playerScore}. With a Draw score of ${draw}!`
   }
   else {
-    return `After 5 Rounds it is a Tie with Player score of ${playerScore} to Computers Score of ${computerScore}. With a Draw score of ${draw}`
+    return `After 5 Rounds: It is a Tie with Player score of ${playerScore} to Computers Score of ${computerScore}. With a Draw score of ${draw}`
   }
 
 
