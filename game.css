@@ -1,0 +1,60 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 500px;
+  flex-direction: column;
+  background-color: rgb(54, 142, 186);
+}
+
+button{
+  margin-right: 20px;
+  cursor: pointer;
+  background-color: aquamarine;
+  padding:10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+button:hover{
+  background-color: rgba(127, 255, 212, 0.712);
+}
+
+.main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 300px;
+  flex-direction: column;
+}
+
+.sec{
+  margin-top: -500px;
+}
+.display{
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 30px;
+}
+
+.buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.computerscore{
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.to{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.playerscore{
+  font-weight: bold;
+}

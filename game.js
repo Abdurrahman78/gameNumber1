@@ -1,3 +1,15 @@
+//Create three buttons, one for each selection. Add an event listener to the buttons that call your playRound function with the correct
+// playerSelection every time a button is clicked. (you can keep the console.logs for this step)
+
+let rockButton=document.querySelector('.rock');
+
+let paperButton=document.querySelector('.paper')
+
+let scissorsButton=document.querySelector('.scissors')
+
+let displayMessage=document.querySelector('.display')
+
+
 //will randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’.
 let computerScore = 0;
 let playerScore = 0;
@@ -10,69 +22,44 @@ function getComputerChoice() {
 
 }
 
-//we want to make sure that player can input upper or lower case letters
-//then we wantt to do multiple comparisons to check what player has choosen and output a message based on that choice
-//Rock beats scissors and loses to paper.
-//Scissors beat paper but loses to rock
-//Paper beats rock, but loses to scissors
-//else draw
+//Add a div for displaying results and change all of your console.logs into DOM methods.
+//Display the running score, and announce a winner of the game once one player reaches 5 points.
+
 function playRound(playerSelection, computerSelection) {
   // your code here!
 
   if (playerSelection === "rock" && computerSelection === "scissors") {
     playerScore++;
-    alert('Player has won! Rock beats scissors')
+    displayMessage.innerHTML='Player has won! Rock beats scissors'
   }
   else if (computerSelection === "rock" && playerSelection === "scissors") {
     computerScore++;
-    alert('Computer has won! Rock beats scissors')
+    displayMessage.innerHTML='Computer has won! Rock beats scissors'
   }
   else if (playerSelection === "rock" && computerSelection === "paper") {
     computerScore++;
-    alert('Computer has won! Paper beats Rock')
+    displayMessage.innerHTML='Computer has won! Paper beats Rock'
   }
   else if (computerSelection === "rock" && playerSelection === "paper") {
     playerScore++;
-    alert('Player has won! Paper beats Rock')
+    displayMessage.innerHTML='Player has won! Paper beats Rock'
   }
   else if (playerSelection === "scissors" && computerSelection === "paper") {
     playerScore++;
-    alert('Player has won! Scissors beats Paper')
+    displayMessage.innerHTML='Player has won! Scissors beats Paper'
   }
   else if (computerSelection === "scissors" && playerSelection === "paper") {
     computerScore++;
-    alert('Computer has won! Scissors beats Paper')
+    displayMessage.innerHTML='Computer has won! Scissors beats Paper'
   }
   else {
     draw++;
-    alert(`Both players chose ${playerSelection}. It was a Draw!`)
+    displayMessage.innerHTML=`Both players chose ${playerSelection}. It was a Draw!`
   }
 
 }
 
-function game() {
 
-  for (let i = 0; i < 5; i++) {
-    let playerSelection = prompt("Please Enter (Rock,Paper,Scissors): ")
-    playerSelection = playerSelection.toLowerCase();
-    let computerSelection = getComputerChoice();
-    playRound(playerSelection, computerSelection);
-
-  }
-  if (playerScore > computerScore) {
-    alert(`After 5 Rounds: Player has Won with a score of ${playerScore} to Computers Score of ${computerScore}. With a Draw score of ${draw}!`)
-  }
-  else if (playerScore < computerScore) {
-    alert(`After 5 Rounds: Computer has Won with a Player score of ${computerScore} to Computers Score of ${playerScore}. With a Draw score of ${draw}!`)
-  }
-  else {
-    alert(`After 5 Rounds: It is a Tie with Player score of ${playerScore} to Computers Score of ${computerScore}. With a Draw score of ${draw}`)
-  }
-
-
-}
-
-console.log(game());
-
-//else will always execute unless the last if is true because they are all indepdent from each other so by using else if it will only execute if everything is false
-//dont need alert on play round since ur already returning a alert by calling the function
+rockButton.addEventListener('click',()=>playRound("rock",getComputerChoice()))
+paperButton.addEventListener('click',()=>playRound("paper",getComputerChoice()))
+scissorsButton.addEventListener('click',()=>playRound("scissors",getComputerChoice()))
