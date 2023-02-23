@@ -58,3 +58,13 @@ button:hover{
 .playerscore{
   font-weight: bold;
 }
+
+.playagain{
+  margin-top: 40px;
+  margin-left:138px;
+  cursor: pointer;
+}
+
+.none{
+  display: none;
+}
